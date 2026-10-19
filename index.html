@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ishwar Thorat | Personal Portfolio</title>
+
+  
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            margin: 0;
+            background: #0b1120;
+            color: #f8fafc;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #0b1120;
+            border-bottom: 1px solid #263449;
+            padding: 12px 25px;
+        }
+
+        .navbar-brand {
+            color: #22d3ee !important;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .navbar-nav {
+            align-items: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 17px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #cbd5e1 !important;
+            font-size: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        .navbar-toggler {
+            border: 1px solid #64748b;
+        }
+
+        .navbar-toggler i {
+            color: #ffffff;
+            font-size: 23px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 70px;
+            background: radial-gradient(
+                circle at 80% 35%,
+                #12304a 0%,
+                #0b1120 48%
+            );
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .accent {
+            color: #22d3ee;
+        }
+
+        .subtitle {
+            color: #b8c4d6;
+            line-height: 1.8;
+        }
+
+        .btn-main {
+            color: #07111f;
+            background: #22d3ee;
+            border: 2px solid #22d3ee;
+            padding: 12px 22px;
+            font-weight: bold;
+            border-radius: 7px;
+        }
+
+        .btn-main:hover {
+            background: transparent;
+            color: #22d3ee;
+        }
+
+        .btn-outline-custom {
+            color: #22d3ee;
+            border: 2px solid #22d3ee;
+            padding: 12px 22px;
+            border-radius: 7px;
+        }
+
+        .btn-outline-custom:hover {
+            background: #22d3ee;
+            color: #07111f;
+        }
+
+        .profile-circle {
+            width: 250px;
+            height: 250px;
+            margin: auto;
+            border-radius: 50%;
+            border: 5px solid #164e63;
+            background: linear-gradient(135deg, #0891b2, #4338ca);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            font-weight: bold;
+            box-shadow: 0 0 45px rgba(34, 211, 238, 0.15);
+        }
+
+        .social-icons a {
+            color: #22d3ee;
+            font-size: 28px;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffffff;
+        }
+
+        /* Sections */
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-alt {
+            background: #101a2c;
+        }
+
+        .section-title {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+
+        .custom-card {
+            background: #111c30;
+            border: 1px solid #2b3b52;
+            border-radius: 14px;
+            padding: 28px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-6px);
+            border-color: #22d3ee;
+        }
+
+        .card-icon {
+            font-size: 36px;
+            color: #22d3ee;
+            margin-bottom: 20px;
+        }
+
+        .custom-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .custom-card p {
+            color: #b8c4d6;
+            line-height: 1.8;
+        }
+
+        .skill-badge {
+            display: inline-block;
+            background: #1c2b42;
+            border: 1px solid #34465e;
+            color: #e2e8f0;
+            padding: 9px 13px;
+            border-radius: 6px;
+            margin: 4px 2px;
+        }
+
+        .project-link {
+            color: #22d3ee;
+            text-decoration: none !important;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            color: #a5f3fc;
+        }
+
+        .timeline {
+            border-left: 3px solid #22d3ee;
+            padding-left: 25px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:before {
+            content: "";
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            left: -33px;
+            top: 6px;
+            border-radius: 50%;
+            background: #22d3ee;
+        }
+
+        .contact-detail {
+            color: #e2e8f0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-detail i {
+            color: #22d3ee;
+            margin-right: 10px;
+        }
+
+        footer {
+            background: #080d18;
+            border-top: 1px solid #263449;
+            padding: 28px 0;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 1199px) {
+            .navbar-nav .nav-item {
+                margin-left: 8px;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 19px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-nav {
+                align-items: flex-start;
+                padding-top: 15px;
+            }
+
+            .navbar-nav .nav-item {
+                margin-left: 0;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 19px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero {
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .profile-circle {
+                width: 200px;
+                height: 200px;
+                font-size: 65px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+            .social-icons a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="#home">Ishwar Thorat</a>
+
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#portfolioNavbar"
+                aria-controls="portfolioNavbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="portfolioNavbar">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">Experience</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">Education</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <p class="accent font-weight-bold">
+                    <i class="fas fa-code"></i>
+                    WELCOME TO MY PORTFOLIO
+                </p>
+
+                <h1>
+                    Hi, I'm <span class="accent">Ishwar Thorat</span>
+                </h1>
+
+                <h2 class="h3 mt-3 mb-4">Python & Web Developer</h2>
+
+                <p class="subtitle mb-4">
+                    I am a Computer Application student passionate about
+                    programming, web development and building practical
+                    applications. I enjoy learning new technologies and
+                    solving real-world problems through code.
+                </p>
+
+                <a href="#projects" class="btn btn-main mr-2 mb-2">
+                    View My Projects <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#contact" class="btn btn-outline-custom mb-2">
+                    Contact Me
+                </a>
+
+                <div class="social-icons mt-4">
+                    <a href="https://github.com/ThoratIshwar"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/ishwar-thorat-830972395/"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 text-center">
+                <div class="profile-circle">IT</div>
+                <h3 class="mt-4">Ishwar Thorat</h3>
+                <p class="subtitle">Aspiring Software Developer</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">About <span class="accent">Me</span></h2>
+            <p class="section-subtitle">Get to know me and my goals</p>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4">
+                <div class="custom-card text-center">
+                    <i class="fas fa-user-graduate card-icon"></i>
+                    <h3>My Developer Journey</h3>
+                    <p>
+                        I am developing my programming and software
+                        development skills through academic studies,
+                        practice and personal projects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <h3>Who Am I?</h3>
+                <p class="subtitle">
+                    I am Ishwar Vishnu Thorat, a B.Sc. Computer Application
+                    student at Nirmalatai Kakade Arts, Commerce and Science
+                    College, Shevgaon. My interests include Python programming,
+                    frontend development, backend development and databases.
+                </p>
+
+                <h3 class="mt-4">My Career Goal</h3>
+                <p class="subtitle">
+                    My goal is to become a skilled software developer,
+                    gain industry experience and create useful, reliable
+                    and user-friendly software applications.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section section-alt" id="skills">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">My <span class="accent">Skills</span></h2>
+            <p class="section-subtitle">Technologies I use and learn</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-laptop-code card-icon"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Creating responsive and attractive website interfaces.</p>
+                    <span class="skill-badge">HTML5</span>
+                    <span class="skill-badge">CSS3</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">Bootstrap</span>
+                    <span class="skill-badge">Angular</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-terminal card-icon"></i>
+                    <h3>Programming</h3>
+                    <p>Developing application logic and backend features.</p>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Django</span>
+                    <span class="skill-badge">Flask</span>
+                    <span class="skill-badge">C</span>
+                    <span class="skill-badge">C++</span>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-database card-icon"></i>
+                    <h3>Database & Tools</h3>
+                    <p>Managing application data and development tools.</p>
+                    <span class="skill-badge">SQL</span>
+                    <span class="skill-badge">SQLite</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">GitHub</span>
+                    <span class="skill-badge">VS Code</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">My <span class="accent">Projects</span></h2>
+            <p class="section-subtitle">Projects and practical learning</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-shield-alt card-icon"></i>
+                    <h3>Password Generator</h3>
+                    <p>
+                        A web application designed to generate passwords
+                        using configurable password options.
+                    </p>
+                    <p class="accent">Python · Django · HTML · CSS</p>
+                    <a class="project-link"
+                       href="https://github.com/ThoratIshwar"
+                       target="_blank" rel="noopener noreferrer">
+                        View GitHub <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-tasks card-icon"></i>
+                    <h3>Smart Task Manager</h3>
+                    <p>
+                        A task management website for organizing activities
+                        and managing tasks efficiently.
+                    </p>
+                    <p class="accent">Angular · TypeScript · CSS</p>
+                    <a class="project-link"
+                       href="https://github.com/ThoratIshwar/Smart-Task-Manager"
+                       target="_blank" rel="noopener noreferrer">
+                        View Project <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-vote-yea card-icon"></i>
+                    <h3>Student Online Voting System</h3>
+                    <p>
+                        An academic web application concept for student
+                        elections, voting and result management.
+                    </p>
+                    <p class="accent">Python · Flask · MySQL · HTML · CSS</p>
+                    <a class="project-link"
+                       href="https://github.com/ThoratIshwar"
+                       target="_blank" rel="noopener noreferrer">
+                        Explore GitHub <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section section-alt" id="experience">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">My <span class="accent">Experience</span></h2>
+            <p class="section-subtitle">My development and learning journey</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="custom-card">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>Academic Project Development</h3>
+                            <p class="accent mb-2">Student Developer</p>
+                            <p>
+                                Building academic and personal applications
+                                to practise web development, programming
+                                and database management.
+                            </p>
+                        </div>
+
+                        <div class="timeline-item mb-0">
+                            <h3>Self-Learning</h3>
+                            <p class="accent mb-2">Technical Skill Development</p>
+                            <p>
+                                Practising HTML, CSS, Bootstrap, Python,
+                                Django, Flask, SQL and GitHub through
+                                coding exercises and projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">My <span class="accent">Education</span></h2>
+            <p class="section-subtitle">My academic qualifications</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-graduation-cap card-icon"></i>
+                    <h3>B.Sc. Computer Application</h3>
+                    <p class="accent">Undergraduate Degree</p>
+                    <p>
+                        Nirmalatai Kakade Arts, Commerce and Science College,
+                        Shevgaon.
+                    </p>
+                    <p>
+                        Learning programming, databases and software development.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="custom-card">
+                    <i class="fas fa-book-open card-icon"></i>
+                    <h3>Higher Secondary Certificate (HSC)</h3>
+                    <p class="accent">Completed in 2022</p>
+                    <p class="mb-0">Percentage: 75.50%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+            <p class="section-subtitle">Let's connect professionally</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fas fa-envelope card-icon"></i>
+                    <h3>Email</h3>
+                    <p>Reach me by email.</p>
+                    <a class="project-link" href="mailto:your-email@example.com">
+                        your-email@example.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fab fa-github card-icon"></i>
+                    <h3>GitHub</h3>
+                    <p>Explore my repositories and code.</p>
+                    <a class="project-link"
+                       href="https://github.com/ThoratIshwar"
+                       target="_blank" rel="noopener noreferrer">
+                        ThoratIshwar
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="custom-card">
+                    <i class="fab fa-linkedin card-icon"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me professionally.</p>
+                    <a class="project-link"
+                       href="https://www.linkedin.com/in/ishwar-thorat-830972395/"
+                       target="_blank" rel="noopener noreferrer">
+                        My LinkedIn Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-3">
+            <a href="mailto:your-email@example.com" class="btn btn-main">
+                <i class="fas fa-paper-plane"></i> Send Me an Email
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container text-center">
+        <h4 class="accent font-weight-bold">Ishwar.dev</h4>
+        <p>Personal Portfolio | Python & Web Developer</p>
+        <p class="small mb-0">
+            &copy; 2026 Ishwar Thorat. All rights reserved.
+        </p>
+        <a href="#home" class="project-link d-inline-block mt-3">
+            Back to Top <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
